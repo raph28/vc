@@ -1,0 +1,169 @@
+<!-- <div class="centered-block-frame" id="incall"></div> -->
+  <style>
+    .split {
+  height: 100%;
+  width: 70%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.split1 {
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  /* background-color: #111; */
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  /* background-color: red; */
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+    #top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 70%;
+}
+#bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 30%;
+}
+
+#top {
+    /* top: 10px;
+    left: 400px;
+    background-color: orange; */
+    top: 0;
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+#bottom {
+    bottom: 0;
+    /* background-color: green; */
+}
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 60%; 
+  overflow: hidden;
+}
+.video-container video {
+  /* Make video to at least 100% wide and tall */
+  /* min-width: 100%; 
+  min-height: 100%;  */
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%,-50%);
+}
+  /* html,
+body,
+object {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+div {
+  margin: 0px;
+  padding: 0px;
+}
+#mainContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+#topContainer {
+  
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 100px;
+  height: calc(100% - 100);
+  width: 100%;
+}
+#bottomContainer {
+ 
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 700px;
+  width: 100%;
+} */
+  </style>
+  
+    <!-- <div align="center">
+    <div class="split left"> -->
+      <head>
+        <link rel="stylesheet" href="..\bower_components\video.js\dist\video-js.css"/>
+      </head>
+      <!-- <body> -->
+        <!-- <input type="text" ng-model="mediaToggle.sources[0].src" placeholder="123-45-678" />
+        <button ng-click="changeurl(mediaToggle.sources[0].src)">Add Item To Shopping List</button>
+        <pre>userdata = "{{mediaToggle.sources[0].src}}"</pre> -->
+        <div class="centered-block-frame" id="incall">
+          <div class="col-md-12 centered-block" >
+          <!-- <video class="video-js vjs-default-skin vjs-big-play-centered vjs-current-time" controls preload="auto"  vjs-video vjs-media="mediaToggle"> -->
+          <!-- <video id="video" width="400%" height="400%" class="video-js vjs-default-skin vjs-big-play-centered vjs-current-time" controls preload="auto"> -->
+          <!-- <source ng-src="{{mediaToggle.sources[0].src || trustUrl}}" type='video/mp4' />  -->
+          <video width="70%" height="70%" controls autoplay>
+          <source ng-src="{{trustSrc(mediaToggle.sources[0].src)}}" type='video/mp4' /> 
+          </video>
+          </div>
+        </div>  
+      <!-- </body>
+    </div>
+    </div> -->
+    <div class="split1 right bottom">
+    <div class="centered-block-frame" id="incall">
+      <div class="col-md-12 centered-block" ng-class="storage.data.videoCall || watcher ? 'video-call' : 'phone-call'">
+        <div class="slide-animate height100" ng-include="callTemplate"></div>
+      </div>
+    </div>
+    </div>
+  
+  
+
+  <!-- <iframe src="partials/video.html" title="W3Schools Free Online Web Tutorials">
+  </iframe> -->
+  
+
